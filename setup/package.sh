@@ -23,16 +23,16 @@ check_requirement () {
 }
 
 check_requirement "ls ../../ext-6.2.0" "Missing ExtJS (https://www.sencha.com/legal/GPL/)"
-check_requirement "ls innosetup-*.exe" "Missing Inno Setup (http://www.jrsoftware.org/isdl.php)"
-check_requirement "ls java-*.windows.x86_64.zip" "Missing Windows 64 Java (https://github.com/ojdkbuild/ojdkbuild)"
-check_requirement "ls jdk-*-linux-x64.zip" "Missing Linux 64 Java (https://github.com/ojdkbuild/contrib_jdk10u-ci/releases)"
-check_requirement "ls jdk-*-linux-armhf.zip" "Missing Linux ARM Java (https://github.com/ojdkbuild/contrib_jdk10u-aarch32-ci/releases)"
+#check_requirement "ls innosetup-*.exe" "Missing Inno Setup (http://www.jrsoftware.org/isdl.php)"
+#check_requirement "ls java-*.windows.x86_64.zip" "Missing Windows 64 Java (https://github.com/ojdkbuild/ojdkbuild)"
+#check_requirement "ls jdk-*-linux-x64.zip" "Missing Linux 64 Java (https://github.com/ojdkbuild/contrib_jdk10u-ci/releases)"
+#check_requirement "ls jdk-*-linux-armhf.zip" "Missing Linux ARM Java (https://github.com/ojdkbuild/contrib_jdk10u-aarch32-ci/releases)"
 check_requirement "which sencha" "Missing sencha cmd package (https://www.sencha.com/products/extjs/cmd-download/)"
 check_requirement "which unzip" "Missing unzip"
-check_requirement "which wine" "Missing wine"
+#check_requirement "which wine" "Missing wine"
 check_requirement "which innoextract" "Missing innoextract"
-check_requirement "which makeself" "Missing makeself"
-check_requirement "which jlink" "Missing jlink"
+#check_requirement "which makeself" "Missing makeself"
+#check_requirement "which jlink" "Missing jlink"
 
 prepare () {
   ../traccar-web/tools/minify.sh
@@ -47,7 +47,7 @@ prepare () {
   cp default.xml out/conf
   cp traccar.xml out/conf
 
-  innoextract innosetup-*.exe
+  #innoextract innosetup-*.exe
   echo "If you got any errors here try isetup version 5.5.5 (or check supported versions using 'innoextract -v')"
 }
 
@@ -67,15 +67,15 @@ package_other () {
   rm out/README.txt
 }
 
-package_windows () {
-  unzip -o java-*.windows.x86_64.zip
-  jlink --module-path java-*.windows.x86_64/jmods --add-modules java.se.ee --output out/jre
-  rm -rf java-*.windows.x86_64
-  wine app/ISCC.exe traccar.iss
-  rm -rf out/jre
-  zip -j traccar-windows-64-$VERSION.zip Output/traccar-setup.exe README.txt
-  rm -r Output
-}
+#package_windows () {
+#  unzip -o java-*.windows.x86_64.zip
+#  jlink --module-path java-*.windows.x86_64/jmods --add-modules java.se.ee --output out/jre
+#  rm -rf java-*.windows.x86_64
+#  wine app/ISCC.exe traccar.iss
+#  rm -rf out/jre
+#  zip -j traccar-windows-64-$VERSION.zip Output/traccar-setup.exe README.txt
+#  rm -r Output
+#}
 
 package_unix () {
   cp setup.sh out
@@ -104,7 +104,7 @@ package_unix () {
 prepare
 
 package_other
-package_windows
-package_unix
+#package_windows
+#package_unix
 
 cleanup
