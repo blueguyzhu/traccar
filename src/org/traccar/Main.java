@@ -104,6 +104,7 @@ public final class Main {
             LOGGER.info("Version: " + Context.getAppVersion());
             LOGGER.info("Starting server...");
 
+            //start all the protocol services
             Context.getServerManager().start();
             if (Context.getWebServer() != null) {
                 Context.getWebServer().start();
