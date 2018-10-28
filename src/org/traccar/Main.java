@@ -106,6 +106,7 @@ public final class Main {
 
             //start all the protocol services
             Context.getServerManager().start();
+            //start web portal
             if (Context.getWebServer() != null) {
                 Context.getWebServer().start();
             }

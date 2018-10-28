@@ -83,7 +83,8 @@ public class ServerManager {
     }
 
     public void start() throws Exception {
-        //each protocol is a trackerServer
+        //each protocol is used to start a trackerServer. The trackerServer will
+        //be added into serverList
         for (TrackerServer server: serverList) {
             try {
                 server.start();
