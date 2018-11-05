@@ -54,6 +54,7 @@ public class GeocoderHandler extends ChannelInboundHandlerAdapter {
                     }
                 }
 
+                //it is suspicious behavor to report geocoder request
                 Context.getStatisticsManager().registerGeocoderRequest();
 
                 geocoder.getAddress(position.getLatitude(), position.getLongitude(),

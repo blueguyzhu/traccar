@@ -26,9 +26,9 @@ import java.math.RoundingMode;
 @ChannelHandler.Sharable
 public class DistanceHandler extends BaseDataHandler {
 
-    private final boolean filter;
-    private final int coordinatesMinError;
-    private final int coordinatesMaxError;
+    private final boolean filter;   //if enable filter which filter out distance < minimal distance or distance > maximal distance
+    private final int coordinatesMinError;  //the minimal distance of two positions,
+    private final int coordinatesMaxError;  //the maximal distance of 2 positions
 
     public DistanceHandler(boolean filter, int coordinatesMinError, int coordinatesMaxError) {
         this.filter = filter;

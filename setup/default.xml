@@ -17,6 +17,16 @@
 
     <entry key='geocoder.enable'>false</entry>
     <entry key='geocoder.type'>google</entry>
+	<!--
+	<entry key='geocoder.url'></entry>
+	<entry key='geocoder.key'></entry>
+	<entry key='geocoder.language'></entry>
+	<entry key='geocoder.format'></entry>
+	<entry key='geocoder.ignorePositions'>false</entry>
+	<entry key='geocoder.processInvalidPositions'>false</entry>
+	<entry key='geocoder.reuseDistance'>100</entry> 
+	Reuse the last reverse geo-info if distance between new position and last position is not bigger than reuseDistance
+-->
 
     <entry key='logger.enable'>true</entry>
     <entry key='logger.level'>info</entry>
